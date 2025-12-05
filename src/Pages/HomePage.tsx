@@ -1,4 +1,3 @@
-import React from 'react'
 import ProductListPage from './ProductListPage'
 
 const HomePage = () => {
