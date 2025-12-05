@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import './App.css'
 import HomePage from './Pages/HomePage'
 import ProductListPage from './Pages/ProductListPage'
@@ -8,7 +7,7 @@ import Header from './Components/Header'
 import ProductDetails from './Pages/ProductDetails'
 
 function App() {
-const [cartCount, setCartCount] = useState<number>(5);
+const cartCount: number = 5;
   return (
     <>
      <Header cartCount={cartCount} />
