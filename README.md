@@ -1,3 +1,6 @@
+#Deploy Link-
+https://deploy-preview-3--mini-ecommerce-03.netlify.app
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
