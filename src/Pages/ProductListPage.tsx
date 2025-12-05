@@ -92,7 +92,7 @@ const ProductListPage = () => {
           <ProductCard
             key={p.id}
             id={p.id}
-            name={p.title}
+            title={p.title}
             price={p.price}
             image={p.thumbnail}
           />

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import useCart from "../hooks/useCart";
+import { useNavigate } from "react-router";
 
 interface ProductProps {
   id: number;
-  name: string;
+  title: string;
   price: number;
   image: string;
 }
@@ -11,6 +12,8 @@ interface ProductProps {
 const ProductCard = ({ id, title, price, image }: ProductProps) => {
   const [qty, setQty] = useState(1);
   const { addToCart } = useCart();
+
+  const navigate = useNavigate();
 
    const handleAdd = () => {
     addToCart({
@@ -34,9 +37,9 @@ const ProductCard = ({ id, title, price, image }: ProductProps) => {
         width: "250px",
       }}
     >
-      <img src={image} alt={title} width="100%" />
+      <img src={image} alt={title} width="100%" style={{ cursor: "pointer" }} onClick={() => navigate(`/products/${id}`)} />
 
-      <h3>{title}</h3>
+      <h3 style={{ cursor: "pointer" }} onClick={() => navigate(`/products/${id}`)}>{title}</h3>
       <p>₹{price}</p>
 
       <input
