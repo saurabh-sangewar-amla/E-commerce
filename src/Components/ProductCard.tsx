@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import useCart from "../hooks/useCart";
 import { useNavigate } from "react-router";
 
 interface ProductProps {
@@ -11,23 +10,10 @@ interface ProductProps {
 
 const ProductCard = ({ id, title, price, image }: ProductProps) => {
   const [qty, setQty] = useState(1);
-  const { addToCart } = useCart();
 
   const navigate = useNavigate();
 
-   const handleAdd = () => {
-    addToCart({
-      id,
-      title,
-      price,
-      quantity: qty,
-    });
-    setQty(1);
-  };
-
-//   const addToCart = () => {
-//     updateCart({ id, name, price, quantity: qty });
-//   };
+  
   return (
     <div
       style={{
@@ -55,7 +41,6 @@ const ProductCard = ({ id, title, price, image }: ProductProps) => {
       />
 
       <button
-        onClick={handleAdd}
         style={{ padding: "6px 12px", cursor: "pointer" }}
       >
         Add to Cart

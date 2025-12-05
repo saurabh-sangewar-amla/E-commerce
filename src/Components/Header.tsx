@@ -1,13 +1,11 @@
 import { FiShoppingCart } from "react-icons/fi";
 import { NavLink } from "react-router";
-import useCart from "../hooks/useCart";
 
 interface HeaderProps {
-  cartCount?: number;
+  cartCount: number;
 }
 
-const Header = ({ cartCount }: HeaderProps) => {
-  const { totalQuantity } = useCart();
+const Header = ({cartCount}: HeaderProps) => {
 
   const linkStyle = {
     textDecoration: "none",
@@ -70,7 +68,7 @@ const Header = ({ cartCount }: HeaderProps) => {
       <div style={{ position: "relative", cursor: "pointer" }}>
         <FiShoppingCart size={26} />
 
-        {totalQuantity > 0 && (
+        {cartCount > 0 && (
           <span
             style={{
               position: "absolute",
@@ -83,7 +81,7 @@ const Header = ({ cartCount }: HeaderProps) => {
               padding: "2px 6px",
             }}
           >
-            {totalQuantity}
+            {cartCount}
           </span>
         )}
       </div>
