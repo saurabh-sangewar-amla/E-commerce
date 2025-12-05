@@ -5,6 +5,7 @@ import ProductListPage from './Pages/ProductListPage'
 import { Route, Routes } from 'react-router'
 import NotFound from './Pages/NotFound'
 import Header from './Components/Header'
+import ProductDetails from './Pages/ProductDetails'
 
 function App() {
 const [cartCount, setCartCount] = useState<number>(5);
@@ -15,6 +16,7 @@ const [cartCount, setCartCount] = useState<number>(5);
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductListPage />} />
+          <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
